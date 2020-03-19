@@ -8,5 +8,6 @@ namespace PROG2_SlutProjekt
 {
     class Weapon
     {
+
     }
 }

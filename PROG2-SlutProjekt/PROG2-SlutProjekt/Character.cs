@@ -8,5 +8,12 @@ namespace PROG2_SlutProjekt
 {
     class Character
     {
+        public Character ()
+        {
+            Console.WriteLine("hej");
+        }
+
+   
+
     }
 }

@@ -13,11 +13,11 @@ namespace PROG2_SlutProjekt
 
         public Enemy()
         {
-            Name = "Clas Göran";
+            Name = "Clas Göran ";
             HealthPoints = 100;
         }
-        
 
+    
 
     }
 }
