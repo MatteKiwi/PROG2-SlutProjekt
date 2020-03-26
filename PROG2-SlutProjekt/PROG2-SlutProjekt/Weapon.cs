@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PROG2_SlutProjekt
 {
-    class Weapon
+    class Weapon:Character
     {
 
     }
