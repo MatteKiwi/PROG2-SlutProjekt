@@ -9,7 +9,6 @@ namespace PROG2_SlutProjekt
     class Story
     {
         
-    
         public void Welcome()
         {     
             Console.WriteLine("-----------------------------------------------------------------------------");
