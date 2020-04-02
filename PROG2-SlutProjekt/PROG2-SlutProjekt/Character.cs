@@ -41,7 +41,5 @@ namespace PROG2_SlutProjekt
             return (xp / 10) + 1;
         }
 
-
-
     }
 }

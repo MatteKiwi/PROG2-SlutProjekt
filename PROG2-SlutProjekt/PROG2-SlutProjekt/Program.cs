@@ -28,16 +28,21 @@ namespace PROG2_SlutProjekt
             e1.Hurt(80);
             e1.AddXp(500);
 
-            Story Welcome = new Story();
+            Weapon W1 = new Weapon();
+           
 
-            Welcome.Welcome();
+            
 
             Game game = new Game();
 
             game.game();
 
+            Console.WriteLine("Name: " + W1.Name + " Type: " + W1.Type);
+
             Console.WriteLine("Name: " + e1.Name + "Hp: " + e1.GetHp() + " Level: " + e1.GetLevel());
             Console.ReadLine();
+
+
 
         }
     }
