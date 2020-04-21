@@ -15,7 +15,7 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("        - Well hello there! Dear traveler I have a quest for you -"       );
             Console.WriteLine(" -You see the mines here in Whiterun a have been overun by vicious creatures! -");
             Console.WriteLine("          - Will you please help us to take back the mines? -");
-            Console.WriteLine("                      - 2. Yes 3. No -                             ");
+            Console.WriteLine("                      - y = Yes--n = No -                             ");
             Console.WriteLine("-----------------------------------------------------------------------------");
         }
 
@@ -31,9 +31,12 @@ namespace PROG2_SlutProjekt
 
         public void Options()
         {
-            Console.WriteLine("1. Attack");
-            Console.WriteLine("2. Run");
-            Console.WriteLine("3. Inspect");
+            Console.WriteLine("----------------------");
+            Console.WriteLine(" -What will you do?- ");
+            Console.WriteLine("2. Attack");
+            Console.WriteLine("3. Run");
+            Console.WriteLine("4. Inspect Weapon");
+            Console.WriteLine("----------------------");
         }
     }
 }
