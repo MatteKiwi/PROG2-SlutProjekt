@@ -18,6 +18,7 @@ namespace PROG2_SlutProjekt
             if (hp < 0)
             {
                 hp = 0;
+
             }
         }
 
@@ -39,6 +40,12 @@ namespace PROG2_SlutProjekt
         public int GetLevel()
         {
             return (xp / 10) + 1;
+        }
+
+        public virtual int Attack()
+        {
+            int i = 30;
+            return i;
         }
 
     }

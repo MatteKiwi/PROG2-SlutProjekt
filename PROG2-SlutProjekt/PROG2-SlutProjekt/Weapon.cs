@@ -18,8 +18,7 @@ namespace PROG2_SlutProjekt
         }
 
         public override void Hurt(int amount)
-        {
-           // amount = 100;
+        {          
             base.Hurt(-amount);
         }
 

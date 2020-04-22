@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace PROG2_SlutProjekt
 {
@@ -10,51 +11,69 @@ namespace PROG2_SlutProjekt
     {
         public void game()
         {
+            // CharacterList();
+
             Story story = new Story();
             story.Welcome();
 
+            Enemy E1 = new Enemy();
+            Character C1 = new Character();
+
             bool gameOver = false;
             while (!gameOver)
-            {             
+            {
                 string input = Console.ReadLine();
-                int x = 0;
-                while(x == 0)
-                {
-                    if(input.ToLower() == "y")
-                    {
-                        x = 1;
-                    }
-                    else if(input.ToLower() == "n")
-                    {
-                        gameOver = true;
-                    }
-                    
-                    Console.WriteLine("no");
-                    Console.ReadLine();
-                }
-
-
-
-
 
                 if (input.ToLower() == "y")
                 {
                     StoryTime(story);
                     int n = UserInput();
+
                     if (n == 2)
                     {
-                        Console.WriteLine("yo");
+                        Console.Clear();
+                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+                        story.Battle();
+                       
+                        C1.Hurt(80);
+                        E1.Hurt(50);
+
+                        Console.ReadLine();
+                        Console.Clear();
+
+                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+                        story.SecondBattle();
+
+                        Console.ReadLine();
+                        Console.Clear();
+
+                        E1.Hurt(99);
+                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+                        
+                        story.FinalBattle();
+                        C1.Hurt(20);
+                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+
+                        Console.ReadLine();
+                        Console.Clear();
+                        story.Death();
+                        Thread.Sleep(1000);
+
+                        gameOver = true;
                     }
 
                     else if (n == 3)
                     {
+                        story.Run();
                         gameOver = true;
                     }
 
                     else if (n == 4)
                     {
                         Weapon W1 = new Weapon();
-                        Console.WriteLine(W1.Name + W1.Type);
+                        Console.WriteLine("Name: " + W1.Name + " type: " + W1.Type);
+                        Console.WriteLine("Press y to return to combat");
+                        continue;
                     }
 
                 }
@@ -62,11 +81,26 @@ namespace PROG2_SlutProjekt
                 {
                     gameOver = true;
                 }
-
-                // gameOver = true;
+               
             }
 
             Console.ReadLine();
+        }
+
+        private static void CharacterList()
+        {
+            //nåt försök på polymorfism tror jag?
+            List<Character> allCharacters = new List<Character>();
+
+            for (int i = 0; i < 100; i++)
+            {
+                allCharacters.Add(new Enemy());
+            }
+
+            for (int i = 0; i < allCharacters.Count; i++)
+            {
+                allCharacters[i].Hurt(5);
+            }
         }
 
         private static void StoryTime(Story story)

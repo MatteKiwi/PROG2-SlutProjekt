@@ -9,9 +9,9 @@ namespace PROG2_SlutProjekt
     class Enemy:Character
     { 
         public string Name { get; private set; }
-        public int maxDmg { get; private set; } 
-        public int minDmg { get; private set; }
 
+        private int enemyHp = 150;
+      
         public Enemy()
         {
             Name = "Clas Göran ";
@@ -20,24 +20,34 @@ namespace PROG2_SlutProjekt
         }
 
         public override int GetHp()
-        {
-            hp = 150;
-            return hp;
+        {         
+            return enemyHp;
         }
 
         public override void Hurt(int amount)
         {
-            if (amount % 3 == 0)
+            /* if (amount % 3 == 0)
+             {
+                 base.Hurt(-amount);
+             }
+             else
+             {
+                 base.Hurt(amount);
+             } */
+            enemyHp -= amount;
+
+            if (enemyHp < 0)
             {
-                base.Hurt(-amount);
-            }
-            else
-            {
-                base.Hurt(amount);
+                enemyHp = 0;
+
             }
         }
 
-
+        public override int Attack()
+        {
+            int i = 30;
+            return i;
+        }
 
 
     }
