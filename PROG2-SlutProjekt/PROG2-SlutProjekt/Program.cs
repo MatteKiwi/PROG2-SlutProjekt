@@ -10,9 +10,8 @@ namespace PROG2_SlutProjekt
     {
         static void Main(string[] args)
         {
-            Game game = new Game();
-            game.game();
-
+            Game play = new Game();
+            play.game();
         }
     }
 }

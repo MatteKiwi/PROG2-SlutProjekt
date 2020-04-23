@@ -9,9 +9,10 @@ namespace PROG2_SlutProjekt
 {
     class Game
     {
+        //den ska heta public void Game men den bråkar när jag ger den det namnet.
         public void game()
         {
-            // CharacterList();
+            CharacterList();
 
             Story story = new Story();
             story.Welcome();
@@ -31,33 +32,7 @@ namespace PROG2_SlutProjekt
 
                     if (n == 2)
                     {
-                        Console.Clear();
-                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
-                        story.Battle();
-                       
-                        C1.Hurt(80);
-                        E1.Hurt(50);
-
-                        Console.ReadLine();
-                        Console.Clear();
-
-                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
-                        story.SecondBattle();
-
-                        Console.ReadLine();
-                        Console.Clear();
-
-                        E1.Hurt(99);
-                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
-                        
-                        story.FinalBattle();
-                        C1.Hurt(20);
-                        Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
-
-                        Console.ReadLine();
-                        Console.Clear();
-                        story.Death();
-                        Thread.Sleep(1000);
+                        Battle(story, E1, C1);
 
                         gameOver = true;
                     }
@@ -85,6 +60,39 @@ namespace PROG2_SlutProjekt
             }
 
             Console.ReadLine();
+        }
+
+        private static void Battle(Story story, Enemy E1, Character C1)
+        {
+            Console.Clear();
+            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            story.Battle();
+
+            C1.Hurt(80);
+            E1.Hurt(50);
+
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            story.SecondBattle();
+
+            Console.ReadLine();
+            Console.Clear();
+
+            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            E1.Hurt(99);
+
+            Console.Clear();
+
+            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            story.FinalBattle();
+            C1.Hurt(20);
+
+            Console.ReadLine();
+            Console.Clear();
+            story.Death();
+            Thread.Sleep(1000);
         }
 
         private static void CharacterList()
