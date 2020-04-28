@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PROG2_SlutProjekt
 {
-    class Story
+    class Story //Denna klass innehåller allt "content" inom spelet och dess syftet är att hålla all "dialog" på ett ställe för att inte göra det kluddigt i Game klassen.
     {
-        
+        //Denna metod välkommnar spelaren och presenterar den ett val
         public void Welcome()
         {     
             Console.WriteLine("-----------------------------------------------------------------------------");
@@ -18,17 +18,19 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("                      - y = Yes--n = No -                             ");
             Console.WriteLine("-----------------------------------------------------------------------------");
         }
-
+        //Denna metod förklara "figthen" för spelaren dessutom presenterar den Enemy.
         public void Mines()
         {
-            Enemy e1 = new Enemy();
+            Enemy e1 = new Enemy();          
+            e1.AddXp(Utils.generator.Next(1, 1000));
             Console.WriteLine("-------------------------------------------------------------------------------");
             Console.WriteLine("              -As you enter the mines you hear a loud roar -");
             Console.WriteLine("                              - GRRRRR! - ");
-            Console.WriteLine("              -From no where! A: " + e1.Name +  " jumps right infront of you-");
+            Console.WriteLine("              -From no where! a level:" + e1.GetLevel() + " " + e1.Name );
+            Console.WriteLine("                     -Jumps right infront of you-" );
             Console.WriteLine("-------------------------------------------------------------------------------");
         }
-
+        //Visar alla val som spelaren har
         public void Options()
         {
             Console.WriteLine("----------------------");
@@ -38,7 +40,7 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("4. Inspect Weapon");
             Console.WriteLine("----------------------");
         }
-
+        //Meddlande som visar ifall spelaren väljer att springa iväg
         public void Run()
         {
             Console.Clear();
@@ -49,7 +51,7 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("               - YOU DIED -                       ");
             Console.WriteLine("--------------------------------------------------");
         }
-
+        //Texten bakom den första striden mellan spelare och enemy
         public void Battle()
         {
             Enemy E1 = new Enemy();
@@ -62,7 +64,7 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("         -You lost 80 health points!- "            );
             Console.WriteLine("--------------------------------------------------");
         }
-
+        //Text bakom den andra delen av striden mellan spelare och enemy
         public void SecondBattle()
         {
             Enemy E1 = new Enemy();
@@ -77,7 +79,7 @@ namespace PROG2_SlutProjekt
 
            
         }
-
+        //Text bakom den sista delan av striden mellan spelare samt enemy
         public void FinalBattle()
         {
             Enemy E1 = new Enemy();
@@ -89,7 +91,7 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("   - He took 20 health points - "     );
             Console.WriteLine("-------------------------------------");
         }
-
+        //En ascii art som presenteras när man dör
         public void Death()
         {
             Console.WriteLine(@" __     ______  _    _   _____ _____ ______ _____  

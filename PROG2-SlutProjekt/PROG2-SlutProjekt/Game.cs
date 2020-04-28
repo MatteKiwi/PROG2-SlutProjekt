@@ -8,17 +8,16 @@ using System.Threading;
 namespace PROG2_SlutProjekt
 {
     class Game
-    {
-        //den ska heta public void Game men den bråkar när jag ger den det namnet.
-        public void game()
+    {      
+        public Game()
         {
-            CharacterList();
+            Enemy E1 = new Enemy();
+            Player P1 = new Player();
+
+            CharacterList(E1, P1);
 
             Story story = new Story();
             story.Welcome();
-
-            Enemy E1 = new Enemy();
-            Character C1 = new Character();
 
             bool gameOver = false;
             while (!gameOver)
@@ -32,7 +31,7 @@ namespace PROG2_SlutProjekt
 
                     if (n == 2)
                     {
-                        Battle(story, E1, C1);
+                        Battle(story, E1, P1);
 
                         gameOver = true;
                     }
@@ -56,38 +55,45 @@ namespace PROG2_SlutProjekt
                 {
                     gameOver = true;
                 }
-               
+
             }
 
             Console.ReadLine();
         }
 
-        private static void Battle(Story story, Enemy E1, Character C1)
+        private static void CharacterList(Enemy E1, Player P1)
+        {
+            List<Character> allCharacters = new List<Character>();
+            allCharacters.Add(E1);
+            allCharacters.Add(P1);
+        }
+
+        private static void Battle(Story story, Enemy E1, Player P1)
         {
             Console.Clear();
-            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
             story.Battle();
 
-            C1.Hurt(80);
-            E1.Hurt(50);
+            P1.Hurt(E1.Attack(80));
+            E1.Hurt(P1.Attack(50));          
 
             Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
             story.SecondBattle();
 
             Console.ReadLine();
             Console.Clear();
 
-            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
-            E1.Hurt(99);
+            Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
+            E1.Hurt(P1.Attack(99));
 
             Console.Clear();
 
-            Console.WriteLine("You: " + C1.GetHp() + " Enemy: " + E1.GetHp());
+            Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
             story.FinalBattle();
-            C1.Hurt(20);
+            P1.Hurt(E1.Attack(20));
 
             Console.ReadLine();
             Console.Clear();
@@ -95,20 +101,17 @@ namespace PROG2_SlutProjekt
             Thread.Sleep(1000);
         }
 
-        private static void CharacterList()
+        private static void CharacterListTest()
         {
-            //nåt försök på polymorfism tror jag?
+            /*nåt försök på polymorfism tror jag?
             List<Character> allCharacters = new List<Character>();
 
             for (int i = 0; i < 100; i++)
             {
                 allCharacters.Add(new Enemy());
+                allCharacters.Add(new Player());
             }
-
-            for (int i = 0; i < allCharacters.Count; i++)
-            {
-                allCharacters[i].Hurt(5);
-            }
+            */
         }
 
         private static void StoryTime(Story story)

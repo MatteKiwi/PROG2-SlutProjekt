@@ -10,8 +10,8 @@ namespace PROG2_SlutProjekt
     {
         static void Main(string[] args)
         {
-            Game play = new Game();
-            play.game();
+            //Skapar en instant av klassen Game som sedan körs, hela "spelet" finns inom game därav behövs inte ingen mer kod i "Main"
+            new Game();
         }
     }
 }

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="PROG2_SlutProjekt.Character">
+  <Class Name="PROG2_SlutProjekt.Character" Collapsed="true">
     <Position X="1.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAACAAAAAAAAAAAAAACAAABAIAAAAAAAABABEAAgAA=</HashCode>
@@ -8,17 +8,24 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PROG2_SlutProjekt.Enemy">
-    <Position X="0.5" Y="3.25" Width="1.5" />
+    <Position X="2.75" Y="1.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAIAAAQAAIAAAAAAAAAABAAAgAA=</HashCode>
       <FileName>Enemy.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PROG2_SlutProjekt.Game">
-    <Position X="5" Y="0.5" Width="1.5" />
+    <Position X="5.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAABAABABAAAAAIAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAACAAAAAADAABABAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PROG2_SlutProjekt.Player">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAIAAAAEAAAAABAAAgAA=</HashCode>
+      <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="PROG2_SlutProjekt.Program">
@@ -29,14 +36,21 @@
     </TypeIdentifier>
   </Class>
   <Class Name="PROG2_SlutProjekt.Story">
-    <Position X="5" Y="2.5" Width="1.5" />
+    <Position X="5.25" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAA0AAAAAAAAAAAAAAACAAAAAEAAAAgAAAAAABAAAI=</HashCode>
       <FileName>Story.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="PROG2_SlutProjekt.Utils">
+    <Position X="7" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Utils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Class Name="PROG2_SlutProjekt.Weapon">
-    <Position X="2.75" Y="3.5" Width="1.5" />
+    <Position X="0.5" Y="4.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAQAAAAAAgAA=</HashCode>
       <FileName>Weapon.cs</FileName>

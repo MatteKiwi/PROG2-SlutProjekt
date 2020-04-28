@@ -16,7 +16,6 @@ namespace PROG2_SlutProjekt
         {
             Name = "Clas Göran ";
             GetHp();
-            AddXp(3);
         }
 
         public override int GetHp()
@@ -25,30 +24,19 @@ namespace PROG2_SlutProjekt
         }
 
         public override void Hurt(int amount)
-        {
-            /* if (amount % 3 == 0)
-             {
-                 base.Hurt(-amount);
-             }
-             else
-             {
-                 base.Hurt(amount);
-             } */
+        {         
             enemyHp -= amount;
 
             if (enemyHp < 0)
             {
                 enemyHp = 0;
-
             }
         }
 
-        public override int Attack()
+        public override int Attack(int dmg)
         {
-            int i = 30;
-            return i;
+            return dmg;
         }
-
 
     }
 }
