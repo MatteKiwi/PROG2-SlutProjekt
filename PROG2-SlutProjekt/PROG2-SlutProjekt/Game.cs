@@ -47,6 +47,7 @@ namespace PROG2_SlutProjekt
 
                     else if (n == 4) //Jag skulle istället ha velat haft en while loop men jag hann inte implantera en på ett effektivt sätt
                     {
+                        Console.Clear();
                         Weapon W1 = new Weapon();
                         Console.WriteLine("Name: " + W1.Name + " type: " + W1.Type);
                         Console.WriteLine("Press y to return to combat");
