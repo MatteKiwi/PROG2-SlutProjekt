@@ -65,14 +65,14 @@ namespace PROG2_SlutProjekt
             Console.ReadLine();
         }
         //En metod med en lista som innehåller E1 och P1
-        private static void CharacterList(Enemy E1, Player P1)
+        private void CharacterList(Enemy E1, Player P1)
         {
             List<Character> allCharacters = new List<Character>();
             allCharacters.Add(E1);
             allCharacters.Add(P1);
         }
         //Metod som innehåller the "battle" i spelet.
-        private static void Battle(Story story, Enemy E1, Player P1)
+        private void Battle(Story story, Enemy E1, Player P1)
         {
             Console.Clear();
             Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
@@ -118,7 +118,7 @@ namespace PROG2_SlutProjekt
             */
         }
         //En metod med "Storyn" som presenteras i början av spelet
-        private static void StoryTime(Story story)
+        private void StoryTime(Story story)
         {
             Console.Clear();
             story.Mines();
@@ -126,7 +126,7 @@ namespace PROG2_SlutProjekt
             story.Options();
         }
         //En metod som innehåller en simpel Userinput som använder sig av while loop och tryparse
-        private static int UserInput()
+        private int UserInput()
         {
             int n = 0;
             while (n <= 1) //en enekel while loop som kollar ifall användaren har skrivit ett nummer och inte en bokstav, ifall användaren har skrivit ett nummer så går den vidare
