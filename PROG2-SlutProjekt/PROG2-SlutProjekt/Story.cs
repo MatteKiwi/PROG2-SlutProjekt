@@ -19,14 +19,14 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("-----------------------------------------------------------------------------");
         }
         //Denna metod förklara "figthen" för spelaren dessutom presenterar den Enemy.
-        public void Mines()
+        public void Mines(Enemy E1)
         {
-            Enemy e1 = new Enemy();          
-            e1.AddXp(Utils.generator.Next(1, 1000));
+         
+            E1.AddXp(Utils.generator.Next(1, 1000));
             Console.WriteLine("-------------------------------------------------------------------------------");
             Console.WriteLine("              -As you enter the mines you hear a loud roar -");
             Console.WriteLine("                              - GRRRRR! - ");
-            Console.WriteLine("              -From no where! a level:" + e1.GetLevel() + " " + e1.Name );
+            Console.WriteLine("              -From no where! a level:" + E1.GetLevel() + " " + E1.Name );
             Console.WriteLine("                     -Jumps right infront of you-" );
             Console.WriteLine("-------------------------------------------------------------------------------");
         }
@@ -52,10 +52,8 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("--------------------------------------------------");
         }
         //Texten bakom den första striden mellan spelare och enemy
-        public void Battle()
+        public void Battle(Enemy E1)
         {
-            Enemy E1 = new Enemy();
-
             Console.WriteLine("--------------------------------------------------");
             Console.WriteLine("    -As: " + E1.Name + "tried to slash you- "      );
             Console.WriteLine("  -You performed a lovely pirouette as u stabed-  ");
@@ -65,9 +63,8 @@ namespace PROG2_SlutProjekt
             Console.WriteLine("--------------------------------------------------");
         }
         //Text bakom den andra delen av striden mellan spelare och enemy
-        public void SecondBattle()
+        public void SecondBattle(Enemy E1)
         {
-            Enemy E1 = new Enemy();
 
             Console.WriteLine("-----------------------------------------------------------------");
             Console.WriteLine("    -You hear a loud scream from " + E1.Name                      );
@@ -80,9 +77,8 @@ namespace PROG2_SlutProjekt
            
         }
         //Text bakom den sista delan av striden mellan spelare samt enemy
-        public void FinalBattle()
+        public void FinalBattle(Enemy E1)
         {
-            Enemy E1 = new Enemy();
 
             Console.WriteLine("-------------------------------------");
             Console.WriteLine("         - Oh no! -                  ");

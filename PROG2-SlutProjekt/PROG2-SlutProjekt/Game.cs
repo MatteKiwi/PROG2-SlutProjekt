@@ -29,7 +29,7 @@ namespace PROG2_SlutProjekt
 
                 if (input.ToLower() == "y")
                 {
-                    StoryTime(story);//kör storytime metoden som innehåller "början" av spelet.
+                    StoryTime(story, E1);//kör storytime metoden som innehåller "början" av spelet.
                     int n = UserInput();
 
                     if (n == 2)
@@ -76,7 +76,7 @@ namespace PROG2_SlutProjekt
         {
             Console.Clear();
             Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
-            story.Battle();
+            story.Battle(E1);
 
             P1.Hurt(E1.Attack(80));
             E1.Hurt(P1.Attack(50));          
@@ -85,7 +85,7 @@ namespace PROG2_SlutProjekt
             Console.Clear();
 
             Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
-            story.SecondBattle();
+            story.SecondBattle(E1);
 
             Console.ReadLine();
             Console.Clear();
@@ -96,7 +96,7 @@ namespace PROG2_SlutProjekt
             Console.Clear();
 
             Console.WriteLine("You: " + P1.GetHp() + " Enemy: " + E1.GetHp());
-            story.FinalBattle();
+            story.FinalBattle(E1);
             P1.Hurt(E1.Attack(20));
 
             Console.ReadLine();
@@ -105,7 +105,7 @@ namespace PROG2_SlutProjekt
             Thread.Sleep(1000);
         }
         //nåt försök på generisk klass
-        private static void CharacterListTest()
+        private void CharacterListTest()
         {
             /*nåt försök på polymorfism tror jag?
             List<Character> allCharacters = new List<Character>();
@@ -118,10 +118,10 @@ namespace PROG2_SlutProjekt
             */
         }
         //En metod med "Storyn" som presenteras i början av spelet
-        private void StoryTime(Story story)
+        private void StoryTime(Story story, Enemy E1)
         {
             Console.Clear();
-            story.Mines();
+            story.Mines(E1);
             Console.ReadLine();
             story.Options();
         }
