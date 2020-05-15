@@ -10,12 +10,15 @@ namespace PROG2_SlutProjekt
     {
         //Denna metod välkommnar spelaren och presenterar den ett val
         public void Welcome()
-        {     
+        {
+            GetValue<string> obj = new GetValue<string>();
+            obj.Value = "- y = Yes/n = No -";
+
             Console.WriteLine("-----------------------------------------------------------------------------");
             Console.WriteLine("        - Well hello there! Dear traveler I have a quest for you -"       );
             Console.WriteLine(" -You see the mines here in Whiterun a have been overun by vicious creatures! -");
             Console.WriteLine("          - Will you please help us to take back the mines? -");
-            Console.WriteLine("                      - y = Yes--n = No -                             ");
+            Console.WriteLine("                     " + obj.Value);
             Console.WriteLine("-----------------------------------------------------------------------------");
         }
         //Denna metod förklara "figthen" för spelaren dessutom presenterar den Enemy.
